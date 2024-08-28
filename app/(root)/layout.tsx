@@ -1,5 +1,5 @@
-import Navbar from "@/components/shared/navbar/navbar";
 import React from "react";
+import Navbar from "@/components/shared/navbar/NavbarComponent";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
