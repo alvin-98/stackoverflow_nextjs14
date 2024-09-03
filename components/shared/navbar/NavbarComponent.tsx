@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Theme from "./Theme";
 import MobileNavbar from "./MobileNavbar";
+import { GlobalSearch } from "../search/GlobalSearch";
 
 const Navbar = () => {
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
           Know<span className="text-primary-500">Ledger </span>
         </p>
       </Link>
-      GlobalSearch
+      <GlobalSearch />
       <div className="flex-between gap-5">
         <Theme />
         <SignedIn>
