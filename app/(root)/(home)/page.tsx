@@ -5,10 +5,13 @@ import Filter from "@/components/shared/Filter";
 import Link from "next/link";
 import HomeFilters from "@/components/home/homeFilters";
 import QuestionCard from "@/components/cards/QuestionCard";
-import { dummyQuestions } from "@/constants";
 import NoResult from "@/components/shared/NoResult";
+import { getQuestions } from "@/lib/actions/question.action";
 
-export default function Home() {
+export default async function Home() {
+  const result = await getQuestions({});
+  console.log(result);
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -36,15 +39,13 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {dummyQuestions.length ? (
-          dummyQuestions.map((question) => (
+        {result.questions.length ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
               title={question.title}
-              tags={question.tags.map((tag) => {
-                return { _id: tag._id, name: tag.name };
-              })}
+              tags={question.tags}
               author={question.author}
               upvotes={question.upvotes}
               views={question.views}
