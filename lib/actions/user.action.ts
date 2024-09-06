@@ -63,12 +63,12 @@ export async function deleteUser(params: DeleteUserParams) {
     }
     // delete user's questions, answers, comments, etc
 
-    const userQuestionsIds = await Question.find({ author: user._id }).distinct(
-      "_id"
-    );
-    const userAnswersIds = await Answer.find({ author: user._id }).distinct(
-      "_id"
-    );
+    // const userQuestionsIds = await Question.find({ author: user._id }).distinct(
+    //   "_id"
+    // );
+    // const userAnswersIds = await Answer.find({ author: user._id }).distinct(
+    //   "_id"
+    // );
 
     await Question.deleteMany({ author: user._id });
     await Answer.deleteMany({ author: user._id });

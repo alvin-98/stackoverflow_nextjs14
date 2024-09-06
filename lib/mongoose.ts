@@ -16,6 +16,8 @@ export const connectToDatabase = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL!, {
       dbName: "KnowLedger",
+      serverSelectionTimeoutMS: 60000, // Increase to 60 seconds
+      socketTimeoutMS: 45000,
     });
     isConnected = true;
     console.log("MongoDB is connected");
