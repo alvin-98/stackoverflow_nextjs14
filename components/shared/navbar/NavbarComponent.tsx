@@ -14,7 +14,7 @@ const Navbar = () => {
           src="/assets/images/site-logo.svg"
           width={23}
           height={23}
-          alt="DevFlow"
+          alt="KnowLedger"
         />
         <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
           Know<span className="text-primary-500">Ledger </span>
