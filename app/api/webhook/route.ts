@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       status: 400,
     });
   }
-
+  console.log(`${evt.type}`);
   // Do something with the payload
   // For this guide, you simply log the payload to the console
   if (evt.type === "user.created") {
